@@ -1,0 +1,1 @@
+Simple travel market simulator. Determines which travel agency with which strategy will survive.
