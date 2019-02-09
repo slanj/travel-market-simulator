@@ -4,6 +4,7 @@ import numpy as np
 from market import Market
 from simpletourist import SimpleTourist
 from agent import SimpleAgent
+from wcalendar import Calendar
 from exceptions import NoChildException
 
 
@@ -43,12 +44,14 @@ def marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,
     temp_agents = []
 
     for trial in range(numTrials):
+        calendar = Calendar()
+
         for num in range(numTourists):
             temp_tourists.append(SimpleTourist(maxBirthProb, clearProb))
         for num in range(numAgents):
             temp_agents.append(SimpleAgent())
 
-        bazar = Market(temp_tourists, temp_agents, maxPop)
+        bazar = Market(calendar, temp_tourists, temp_agents, maxPop)
 
         for i in range(timesteps):
             p, t, m = bazar.update()

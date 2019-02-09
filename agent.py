@@ -15,7 +15,7 @@ class SimpleAgent(object):
         """
 
         self.money = money
-        self.costs = 100
+        self.costs = costs
 
     def getMoney(self):
         """

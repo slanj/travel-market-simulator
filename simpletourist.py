@@ -56,15 +56,17 @@ class SimpleTourist(object):
         if self.tiredness < 0.9:
             self.tiredness += np.random.normal(0.2, 0.1)
 
-    def rest(self):
+    def rest(self, calendar):
         """
         Tourist goes to vacation, depending on tiredness
         """
-        if self.tiredness > 0.9:
+        if self.tiredness > 0.6 and calendar.isHoliday():
+            # if tourist is tired and today is a holiday
             # try to buy a tour from tour agency
             pass
         elif random.random() > (1-self.getTiredness()):
-            # try to buy a tour from tour agency
+            # if tourist is very tired -
+            # try to buy a tour from tour agency, despite
             pass
 
     def reproduce(self, popDensity):

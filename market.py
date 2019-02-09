@@ -6,7 +6,7 @@ class Market(object):
     Representation of a simplified market.
     """
 
-    def __init__(self, tourists, agents, maxPop):
+    def __init__(self, calendar, tourists, agents, maxPop):
         """
         Initialization function, saves the tourists, agents
         and maxPop parameters as attributes.
@@ -23,6 +23,7 @@ class Market(object):
         self.tourists = tourists
         self.agents = agents
         self.maxPop = maxPop
+        self.calendar = calendar
 
     def getTourists(self):
         """
@@ -98,7 +99,7 @@ class Market(object):
         for tourist in self.tourists:
             if not tourist.doesClear():
                 tourist.work()
-                tourist.rest()
+                tourist.rest(self.calendar)
                 temp_tourists.append(tourist)
         self.tourists = temp_tourists[:]
         temp_tourists = []
@@ -118,5 +119,7 @@ class Market(object):
                 continue
         self.tourists.extend(temp_tourists)
         temp_tourists = []
+
+        self.calendar.timesGoBy()
 
         return len(self.tourists), mean_tired, mean_money
