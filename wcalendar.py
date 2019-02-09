@@ -14,8 +14,8 @@ class Calendar(object):
         Initialize a Calendar instance.
         Initialize weeks counter.
         wcount: current week number.
-        wholidays: list of week numbers, that we assume as holidays
-        mholidays: list of month numbers, that we assume as holidays
+        wholidays: list of week numbers, that we assume as holidays.
+        mholidays: list of month numbers, that we assume as holidays.
         """
         self.wcount = wcount
         self.wholidays = wholidays

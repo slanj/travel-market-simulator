@@ -24,13 +24,13 @@ def marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,
     for 60 timesteps, and plots the average tourists population size as a
     function of time.
 
-    numTourists: number of SimpleTourist to create for market (an integer)
-    numAgents: number of SimpleAgent to create for the market (an integer)
-    maxPop: maximum tourist population for market (an integer)
-    maxBirthProb: Maximum reproduction probability (a float between 0-1)
-    clearProb: Maximum clearance probability (a float between 0-1)
-    numTrials: number of simulation runs to execute (an integer)
-    timesteps: number of timesteps in each simulation (an integer)
+    numTourists: number of SimpleTourist to create for market (an integer).
+    numAgents: number of SimpleAgent to create for the market (an integer).
+    maxPop: maximum tourist population for market (an integer).
+    maxBirthProb: Maximum reproduction probability (a float between 0-1).
+    clearProb: Maximum clearance probability (a float between 0-1).
+    numTrials: number of simulation runs to execute (an integer).
+    timesteps: number of timesteps in each simulation (an integer).
     """
 
     populations = []

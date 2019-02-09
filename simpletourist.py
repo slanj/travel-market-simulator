@@ -11,9 +11,9 @@ class SimpleTourist(object):
         """
         Initialize a SimpleTourist instance, saves all parameters as attributes
         of the instance.
-        maxBirthProb: Maximum reproduction probability (a float between 0-1)
+        maxBirthProb: Maximum reproduction probability (a float between 0-1).
         clearProb: Maximum clearance probability (a float between 0-1).
-        tiredness: How much tourist is tired at the beginning (0-1)
+        tiredness: How much tourist is tired at the beginning (0-1).
         """
 
         self.maxBirthProb = maxBirthProb

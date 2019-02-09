@@ -12,12 +12,12 @@ class Market(object):
         and maxPop parameters as attributes.
 
         tourists: the list representing the tourist population (a list of
-        SimpleTourist instances)
+        SimpleTourist instances).
 
         agents: the list representing agents in the market (a list of
-        SimpleAgents instances)
+        SimpleAgents instances).
 
-        maxPop: the maximum tourist population for this market (an integer)
+        maxPop: the maximum tourist population for this market (an integer).
         """
 
         self.tourists = tourists
@@ -91,7 +91,7 @@ class Market(object):
           the list of tourists in this market.
 
         returns: The total tourist population at the end of the update (an
-        integer)
+        integer).
         """
 
         temp_tourists = []
