@@ -7,6 +7,13 @@ from agent import SimpleAgent
 from exceptions import NoChildException
 
 
+def plotProgress(timesteps, y, yname, ylabel, plot_title):
+    pylab.figure()
+    pylab.plot(range(timesteps), y, label = yname)
+    pylab.title(plot_title)
+    pylab.xlabel("Time Steps")
+    pylab.ylabel(ylabel)
+    pylab.legend(loc = "best")
 
 def marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,
                           numTrials, timesteps=60):
@@ -32,9 +39,6 @@ def marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,
     tireds = np.zeros(timesteps)
     agent_money = np.zeros(timesteps)
 
-    p = 0
-    t = 0
-    m = 0
     temp_tourists = []
     temp_agents = []
 
@@ -59,26 +63,14 @@ def marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,
     tireds = tireds / numTrials
     agent_money = agent_money / numTrials
 
-    pylab.figure()
-    pylab.plot(range(timesteps), populations, label = "SimpleTourist")
-    pylab.title("Travel Market simulation")
-    pylab.xlabel("Time Steps")
-    pylab.ylabel("Average Tourist Population")
-    pylab.legend(loc = "best")
+    plotProgress(timesteps, populations, "SimpleTourist",
+                "Average Tourist Population", "Travel Market simulation")
 
-    pylab.figure()
-    pylab.plot(range(timesteps), tireds, label = "TiredTourists")
-    pylab.title("Tourist Tiredness")
-    pylab.xlabel("Time Steps")
-    pylab.ylabel("Average Tourist Tiredness")
-    pylab.legend(loc = "best")
+    plotProgress(timesteps, tireds, "Tiredness Percent",
+                "Average Tourist Tiredness", "Tourist Tiredness")
 
-    pylab.figure()
-    pylab.plot(range(timesteps), agent_money, label = "SimpleAgents")
-    pylab.title("Agency's money")
-    pylab.xlabel("Time Steps")
-    pylab.ylabel("Average Agency's money")
-    pylab.legend(loc = "best")
+    plotProgress(timesteps, agent_money, "Money amount",
+                "Average Agency's money", "Agency's money")
 
     pylab.show()
 
@@ -88,7 +80,7 @@ numAgents = 100
 maxPop = 10000
 maxBirthProb = 0.2
 clearProb = 0.01
-numTrials = 1
+numTrials = 2
 timesteps = 60
 
 marketSimulation(numTourists, numAgents, maxPop, maxBirthProb, clearProb,

@@ -13,6 +13,7 @@ class SimpleTourist(object):
         of the instance.
         maxBirthProb: Maximum reproduction probability (a float between 0-1)
         clearProb: Maximum clearance probability (a float between 0-1).
+        tiredness: How much tourist is tired at the beginning (0-1)
         """
 
         self.maxBirthProb = maxBirthProb
@@ -54,6 +55,17 @@ class SimpleTourist(object):
         """
         if self.tiredness < 0.9:
             self.tiredness += np.random.normal(0.2, 0.1)
+
+    def rest(self):
+        """
+        Tourist goes to vacation, depending on tiredness
+        """
+        if self.tiredness > 0.9:
+            # try to buy a tour from tour agency
+            pass
+        elif random.random() > (1-self.getTiredness()):
+            # try to buy a tour from tour agency
+            pass
 
     def reproduce(self, popDensity):
         """

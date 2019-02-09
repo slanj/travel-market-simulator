@@ -98,6 +98,7 @@ class Market(object):
         for tourist in self.tourists:
             if not tourist.doesClear():
                 tourist.work()
+                tourist.rest()
                 temp_tourists.append(tourist)
         self.tourists = temp_tourists[:]
         temp_tourists = []

@@ -7,7 +7,7 @@ class SimpleAgent(object):
     """
     Representation of a simple travel agency.
     """
-    def __init__(self, money=1000, costs=42):
+    def __init__(self, money=4200, costs=42):
         """
         Initialize a SimpleAgent instance, saves all parameters as attributes
         of the instance.
