@@ -58,7 +58,7 @@ class SimpleTourist(object):
 
     def rest(self, calendar):
         """
-        Tourist goes to vacation, depending on tiredness
+        Tourist goes to vacation, depending on tiredness.
         """
         if self.tiredness > 0.6 and calendar.isHoliday():
             # if tourist is tired and today is a holiday
@@ -66,17 +66,17 @@ class SimpleTourist(object):
             pass
         elif random.random() > (1-self.getTiredness()):
             # if tourist is very tired -
-            # try to buy a tour from tour agency, despite
+            # try to buy a tour from tour agency, despite holiday
             pass
 
     def reproduce(self, popDensity):
         """
-        Stochastically determines whether this tourist particle reproduces at a
+        Stochastically determines whether this tourist reproduces at a
         time step. Called by the update() method in the Market class.
-        The tourist particle reproduces with probability
+        The tourist reproduces with probability
         self.maxBirthProb * (1 - popDensity).
 
-        If this tourist particle reproduces, then reproduce() creates and returns
+        If this tourist reproduces, then reproduce() creates and returns
         the instance of the offspring SimpleTourist (which has the same
         maxBirthProb and clearProb values as its parent).
 
@@ -84,9 +84,9 @@ class SimpleTourist(object):
         tourist population divided by the maximum population.
 
         returns: a new instance of the SimpleTourist class representing the
-        offspring of this tourist particle. The child should have the same
+        offspring of this tourist. The child should have the same
         maxBirthProb and clearProb values as this tourist. Raises a
-        NoChildException if this tourist particle does not reproduce.
+        NoChildException if this tourist does not reproduce.
         """
 
         if self.maxBirthProb * (1 - popDensity) > random.random():
